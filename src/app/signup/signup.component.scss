@@ -1,0 +1,46 @@
+@import "mixins";
+@import "variables";
+
+.sheet-content-container {
+  @include flexStartCol(32px, center);
+  width: 360px;
+  height: 893px;
+
+  .heading {
+    @include flexStartCol(6px, center);
+    margin-top: 16px;
+  }
+
+  mat-divider {
+    width: 328px;
+    background-color: #8e8e8e;
+  }
+
+  .content-form {
+    width: 328px;
+    height: 392px;
+    @include flexStartCol(16px);
+
+    form {
+      @include flexStartCol(4px);
+      
+    }
+
+    .actions {
+      text-align: center;
+    }
+  }
+
+  .footer-text {
+    width: 100%;
+    text-align: center;
+    padding: 4px 0 40px;
+
+    .or-text {
+      font-size: $font-size-s;
+      color: $light-text;
+      display: block;
+      margin-bottom: 12px;
+    }
+  }
+}
