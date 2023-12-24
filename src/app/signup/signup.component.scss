@@ -2,30 +2,23 @@
 @import "variables";
 
 .sheet-content-container {
-  @include flexStartCol(32px, center);
-  width: 360px;
-  height: 893px;
-
+  @include mainPageContainer();
   .heading {
     @include flexStartCol(6px, center);
-    margin-top: 16px;
   }
-
+  
   mat-divider {
-    width: 328px;
-    background-color: #8e8e8e;
+    width: 100%;
+    background-color: $grey-1;
   }
 
   .content-form {
-    width: 328px;
-    height: 392px;
+    width: 100%;
     @include flexStartCol(16px);
 
     form {
       @include flexStartCol(4px);
-      
     }
-
     .actions {
       text-align: center;
     }

@@ -7,6 +7,10 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     component: SignupComponent,
+  },
+  {
+    path: 'signup',
+    redirectTo: 'signup',
   }
 ];
 
