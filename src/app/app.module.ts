@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignUpModule } from './signup/signup.module';
-import { LogoModule } from './shared-modules/logo/logo.module';
 
 
 @NgModule({
@@ -15,8 +14,7 @@ import { LogoModule } from './shared-modules/logo/logo.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SignUpModule,
-    LogoModule
+    SignUpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,11 +16,11 @@ export class SignupComponent implements OnInit {
   constructor() { }
   ngOnInit(): void {
     this.initForm();
-  }
-  initForm() {
     this.verifyBtnDetails.label = 'Verify OTP';
+  }
+
+  initForm() {
     this.userForm = new FormGroup({
     });
   }
-
 }
