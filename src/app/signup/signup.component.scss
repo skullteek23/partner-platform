@@ -6,7 +6,7 @@
   .heading {
     @include flexStartCol(6px, center);
   }
-  
+
   mat-divider {
     width: 100%;
     background-color: $grey-1;
@@ -14,6 +14,7 @@
 
   .content-form {
     width: 100%;
+    color: $black-75;
     @include flexStartCol(16px);
 
     form {

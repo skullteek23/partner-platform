@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ButtonConfig } from '@app/shared-modules/buttons/models/button.model';
+import { FULL_NAME_VALIDATORS } from '@app/utils/form-validators-utility';
+import { MOBILE_VALIDATORS } from '@app/utils/form-validators-utility';
 
 @Component({
   selector: 'app-signup',
@@ -22,11 +24,11 @@ export class SignupComponent implements OnInit {
 
   initForm() {
     this.userForm = new FormGroup({
-      name: new FormControl(null),
-      company: new FormControl(null),
-      email: new FormControl(null),
-      mobile: new FormControl(null),
-      partnerType: new FormControl(null),
+      name: new FormControl(null, FULL_NAME_VALIDATORS),
+      company: new FormControl(null, [Validators.required]),
+      email: new FormControl(null, [Validators.email]),
+      mobile: new FormControl(null, MOBILE_VALIDATORS),
+      partnerType: new FormControl(null, [Validators.required]),
     });
   }
 
