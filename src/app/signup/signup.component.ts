@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { ButtonConfig } from '@app/shared-modules/buttons/models/button.model';
 
 @Component({
@@ -9,6 +9,7 @@ import { ButtonConfig } from '@app/shared-modules/buttons/models/button.model';
 })
 
 export class SignupComponent implements OnInit {
+
   userForm!: FormGroup;
   verifyBtnDetails = new ButtonConfig();
   partners: string[] = ['Ground'];
@@ -21,6 +22,15 @@ export class SignupComponent implements OnInit {
 
   initForm() {
     this.userForm = new FormGroup({
+      name: new FormControl(null),
+      company: new FormControl(null),
+      email: new FormControl(null),
+      mobile: new FormControl(null),
+      partnerType: new FormControl(null),
     });
+  }
+
+  onSubmit() {
+      console.log(this.userForm.value);
   }
 }
