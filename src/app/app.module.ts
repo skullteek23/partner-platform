@@ -5,19 +5,22 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignUpModule } from './signup/signup.module';
 import { LoginModule } from './login/login.module';
+import { HomeModule } from './home/home.module';
+import { TopNavModule } from './top-nav/top-nav.module';
 
 
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     SignUpModule,
-    LoginModule
+    LoginModule,
+    HomeModule,
+    TopNavModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
