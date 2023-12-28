@@ -9,7 +9,6 @@ import { IconSelectionMenuModule } from '@app/shared-modules/icon-selection-menu
 import { PlaceholderModule } from '@app/shared-modules/placeholder/placeholder.module';
 import { LoaderModule } from '@app/shared-modules/loader/loader.module';
 import { InteractiveCardModule } from '@app/shared-modules/interactive-card/interactive-card.module';
-import { TopNavModule } from '@app/top-nav/top-nav.module';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -23,7 +22,6 @@ import { TopNavModule } from '@app/top-nav/top-nav.module';
     PlaceholderModule,
     LoaderModule,
     InteractiveCardModule,
-    TopNavModule
   ],
   exports: [HomeComponent],
   providers: [DatePipe]

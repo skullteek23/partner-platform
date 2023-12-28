@@ -20,21 +20,26 @@ export class HomeComponent implements OnInit {
   buttonDetails = new ButtonConfig();
   data = new IconSelectionData();
 
-
   constructor() { }
 
   ngOnInit(): void {
-   
     this.buttonDetails.icon = 'sports_soccer';
     this.buttonDetails.label = Constants.GET_STARTED;
     this.data.items = JSON.parse(JSON.stringify(ACTIONS_MENU_NEW_USER));
   }
 
+  /**
+   * Select an option from the menu
+   * @param selection
+   */
   onSelectOption(selection: IconSelectionDataItem) {
-
+    // code here
   }
 
+  /**
+   * Get started
+   */
   getStarted() {
-    console.log("Worked")
+    // code here
   }
 }

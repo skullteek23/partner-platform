@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ButtonConfig } from '@app/shared-modules/buttons/models/button.model';
-import { FULL_NAME_VALIDATORS } from '@app/utils/form-validators-utility';
-import { MOBILE_VALIDATORS } from '@app/utils/form-validators-utility';
+import { FULL_NAME_VALIDATORS } from '@app/utils/main-utilities/form-validators-utility';
+import { MOBILE_VALIDATORS } from '@app/utils/main-utilities/form-validators-utility';
 
 @Component({
   selector: 'app-signup',
@@ -33,6 +33,6 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit() {
-      console.log(this.userForm.value);
+    console.log(this.userForm.value);
   }
 }

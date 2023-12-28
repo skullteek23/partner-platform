@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ButtonConfig } from '@app/shared-modules/buttons/models/button.model';
-import { MOBILE_VALIDATORS } from '@app/utils/form-validators-utility';
+import { MOBILE_VALIDATORS } from '@app/utils/main-utilities/form-validators-utility';
 
 
 @Component({
@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
       phoneNumber: new FormControl(null, MOBILE_VALIDATORS),
     });
   }
+
   onSubmit() {
     console.log(this.userForm.value);
   }

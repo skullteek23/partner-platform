@@ -4,6 +4,7 @@ export const HomeMessages = {
   },
   error: {
     noBooking: 'Bookings will appear here.',
+    noSlots: 'Slots will appear here.',
   },
   title: {},
 };
@@ -44,14 +45,14 @@ export const ApiMessages = {
     cancelled: 'Operation cancelled! Please try again.',
     unknown: 'Unknown error occurred! Please try again.',
     deadline: 'Operation timed out! Please try again.',
-    alreadyExists: 'Already exists! Please try again.',
+    alreadyExists: 'Entity already exists! Please try again.',
     notFound: 'Not found! Please try again.',
     invalidArgument: 'Invalid details! Please try again.',
-    failedPrecondition: 'Not allowed! Please contact admin.',
+    failedPrecondition: 'Condition failed! Please try again.',
     aborted: 'Operation aborted by system! Please try again.',
     internal: 'Internal error! Please try again later.',
-    permissionDenied: 'Permission denied! Please try again.',
-    notSupported: 'Operation not supported! Please try again.',
+    permissionDenied: 'You are not allowed to perform this action.',
+    notSupported: 'Service not supported! Please try again.',
     unavailable: 'Service unavailable! Please try again.',
     unauthenticated: 'Invalid credentials! Please try again.',
     somethingWentWrong: 'Something went wrong! Please try again.',
@@ -95,8 +96,8 @@ export const OrderMessages = {
     thankYou: 'Thank you for your booking!',
     cancelledBookingTitle: 'Booking Cancelled!',
     thankYouNote: 'Get ready to score goals and make memories on the field - see you at the game!',
-    playerSlot: `This slot is only for one person per time slot. To buy more than one slots, Become a 'Manager'.`,
-    managerSlot: `This slot is for more than one person. To buy slot for only yourself, Become a 'Player'.`,
+    playerSlot: `This spot is only for 1 person. To get slots for your team, Choose 'Join as Team'.`,
+    managerSlot: `This spot is for a team. To get a spot for just yourself, Choose 'Join as Player'.`,
     cancelNote: 'Refund amount will be credited in your ballzo wallet that can be used in future bookings.',
     cancelledOrderNote: 'This order has been cancelled. Refund amount has been credited in your ballzo wallet.'
   },
@@ -115,6 +116,7 @@ export const PaymentMessages = {
   success: 'Payment successful!',
   error: {
     slotFull: 'Slot is full! Please try another one.',
+    verificationFailed: 'Payment not verified! Please try again.',
   },
   note: {
     walletMoney: 'Ballzo money can be used to pay for all your ground bookings. Max Balance cannot be more than ₹10,000.'

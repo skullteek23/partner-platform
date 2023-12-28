@@ -4,6 +4,7 @@ export class ColorsUtility {
   static readonly green = '#97e9b3';
   static readonly red = '#ff7f6f';
   static readonly white = '#ffffff';
+  static readonly blue_primary = '#4a00e0';
 
   static getFillingGradient(primaryColor: string, secondaryColor: string, percentage: number): string {
     return `linear-gradient(90deg, ${primaryColor} ${percentage}%, ${secondaryColor} ${percentage}%, ${secondaryColor} 100%)`;

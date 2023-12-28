@@ -9,17 +9,10 @@
     <form [formGroup]="userForm">
       <mat-form-field appearance="outline">
         <mat-label>Phone Number</mat-label>
-        <input
-          matInput
-          type="tel"
-          name="phone-number"
-          id="contact-number"
-          formControlName="phoneNumber"
-          #firstInputRef
-          placeholder="Enter Your 10-digit Mobile Number"
-        />
+        <input matInput type="tel" name="phone-number" id="contact-number" formControlName="phoneNumber" #firstInputRef
+          placeholder="Enter Your 10-digit Mobile Number" />
         <mat-hint class="custom-hints"></mat-hint>
-        <mat-error >
+        <mat-error>
           <app-form-field-errors [control]="phoneNumber" inputName="phone number"></app-form-field-errors>
         </mat-error>
       </mat-form-field>
@@ -32,7 +25,7 @@
     <div class="footer-text">
       <span class="or-text">OR</span>
       <span class="login-segway">
-        <a  class="links">Create</a>
+        <a class="links">Create</a>
         a New Account
       </span>
     </div>

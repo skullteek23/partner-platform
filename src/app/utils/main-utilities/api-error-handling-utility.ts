@@ -1,5 +1,5 @@
-import { AuthMessages, CommonMessages, ApiMessages } from "@app/constant/common-messages";
-import { IApiError, CloudFnErrorCode, CloudStorageErrorCode } from "@app/models/firebase-error.model";
+import { AuthMessages, CommonMessages, ApiMessages } from "@app/utils/constant/common-messages";
+import { IApiError, CloudFnErrorCode, CloudStorageErrorCode } from "@app/utils/models/firebase-error.model";
 
 
 /**
@@ -104,7 +104,7 @@ export function getCloudFnErrorMsg(error: any): string {
       case 'functions/internal':
         return ApiMessages.error.internal;
       case 'functions/failed-precondition':
-        return ApiMessages.error.failedPrecondition;
+        return ApiMessages.error.permissionDenied;
       case 'functions/permission-denied':
         return ApiMessages.error.permissionDenied;
       case 'functions/unauthenticated':
