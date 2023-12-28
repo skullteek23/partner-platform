@@ -1,0 +1,40 @@
+@import "mixins";
+@import "variables";
+
+.sheet-content-container {
+  @include mainPageContainer();
+  .heading {
+    @include flexStartCol(6px, center);
+  }
+
+  mat-divider {
+    width: 100%;
+    background-color: $grey-1;
+  }
+
+  .content-form {
+    width: 100%;
+    color: $black-75;
+    @include flexStartCol(16px);
+
+    form {
+      @include flexStartCol(4px);
+    }
+    .actions {
+      text-align: center;
+    }
+  }
+
+  .footer-text {
+    width: 100%;
+    text-align: center;
+    padding: 4px 0 40px;
+
+    .or-text {
+      font-size: $font-size-s;
+      color: $light-text;
+      display: block;
+      margin-bottom: 12px;
+    }
+  }
+}

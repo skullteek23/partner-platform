@@ -1,0 +1,31 @@
+<div class="main-container home-content-wrapper">
+  <div class="header-content-container">
+    <div class="salutation-strip">
+      <span class="page-sub-label"> Hi , {{ name }}</span>
+      <ng-container>
+        <!-- <button mat-icon-button>
+          <mat-icon fontSet="material-icons-round">account_circle</mat-icon>
+        </button> -->
+      </ng-container>
+    </div>
+    <app-icon-selection-menu [data]="data" (selectionChange)="onSelectOption($event)">
+    </app-icon-selection-menu>
+  </div>
+
+  <div class="content-container">
+    <div class="salutation-strip">
+      <div class="page-sub-label">Your Grounds:</div>
+      <!-- <button mat-icon-button>
+        <mat-icon fontSet="material-icons-round">info</mat-icon>
+      </button> -->
+    </div>
+    <div class="content">
+      <div class="onboarding-content">
+        <app-wide-button (clickEv)="getStarted()" [displayDetails]="buttonDetails"></app-wide-button>
+        <app-placeholder></app-placeholder>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,49 @@
+<div class="sheet-content-container">
+  <div class="heading">
+    <app-logo></app-logo>
+    <div><strong class="semi-strong">Discover, Book, and Play!</strong></div>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="content-form">
+    <div class="page-sub-label">Create an Account:</div>
+    <form [formGroup]="userForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" name="name" id="name" formControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Company</mat-label>
+        <input matInput type="text" name="company" id="company" formControlName="company" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" name="email" id="email" formControlName="email" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Mobile</mat-label>
+        <input matInput type="tel" name="mobile" id="mobile" formControlName="mobile" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Partner Type</mat-label>
+        <mat-select formControlName="partnerType">
+          <mat-option *ngFor="let partner of partners" [value]="partner">
+            {{ partner }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+
+    <div class="actions">
+      <app-next-action-button [displayDetails]="verifyBtnDetails" (click)="onSubmit()"></app-next-action-button>
+    </div>
+
+    <div class="footer-text">
+      <div class="or-text">OR</div>
+      <a class="links">Login to Existing Account</a>
+    </div>
+  </div>
+</div>
