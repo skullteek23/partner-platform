@@ -6,25 +6,85 @@
   <mat-divider></mat-divider>
   <div class="content-form">
     <div class="page-sub-label">Create an Account:</div>
-    <form [formGroup]="userForm">
+    <form [formGroup]="formGroup">
       <mat-form-field appearance="outline">
         <mat-label>Name</mat-label>
-        <input matInput type="text" name="name" id="name" formControlName="name" />
+        <input
+          matInput
+          type="text"
+          name="name"
+          id="name"
+          formControlName="name"
+        />
+        <mat-error *ngIf="name?.errors">
+          <app-form-field-errors [control]="name"></app-form-field-errors>
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Company</mat-label>
-        <input matInput type="text" name="company" id="company" formControlName="company" />
+        <input
+          matInput
+          type="text"
+          name="company"
+          id="company"
+          formControlName="company"
+        />
+        <mat-error *ngIf="company?.errors">
+          <app-form-field-errors [control]="company"></app-form-field-errors>
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
-        <input matInput type="email" name="email" id="email" formControlName="email" />
+        <input
+          matInput
+          type="email"
+          name="email"
+          id="email"
+          formControlName="email"
+        />
+        <mat-error *ngIf="email?.errors">
+          <app-form-field-errors [control]="email"></app-form-field-errors>
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Mobile</mat-label>
-        <input matInput type="tel" name="mobile" id="mobile" formControlName="mobile" />
+        <input
+          matInput
+          type="tel"
+          name="phone-number"
+          id="contact-number"
+          formControlName="phoneNumber"
+        />
+        <mat-hint [@fadeInOut]="otpSent" class="custom-hints" *ngIf="otpSent">
+          {{ messages.hints.otpSent }}
+        </mat-hint>
+        <mat-error *ngIf="phoneNumber?.errors">
+          <app-form-field-errors
+            [control]="phoneNumber"
+          ></app-form-field-errors>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field color="primary" *ngIf="otpSent">
+        <mat-label>Enter OTP</mat-label>
+        <input
+          matInput
+          type="tel"
+          autocomplete="one-time-code"
+          name="otp"
+          id="otp"
+          formControlName="otp"
+          placeholder="Enter 6-digit OTP"
+        />
+        <mat-error *ngIf="otp?.errors">
+          <app-form-field-errors
+            [control]="otp"
+            inputName="OTP"
+          ></app-form-field-errors>
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
@@ -34,16 +94,40 @@
             {{ partner }}
           </mat-option>
         </mat-select>
+        <mat-error *ngIf="partnerType?.errors">
+          <app-form-field-errors
+            [control]="partnerType"
+          ></app-form-field-errors>
+        </mat-error>
       </mat-form-field>
+
+      <div class="actions" *ngIf="otpSent">
+        <app-next-action-button
+          [disabled]="isDisableFinalBtn(formGroup)"
+          (clickEv)="signup(formGroup, confirmationResult)"
+          [displayDetails]="continueBtnDetails"
+        ></app-next-action-button>
+        <button mat-icon-button (click)="editNumber()">
+          <mat-icon fontSet="material-icons-round">edit</mat-icon>
+        </button>
+      </div>
+
+      <ng-container *ngIf="!otpSent">
+        <app-next-action-button
+          [disabled]="isDisableSendOtpBtn(formGroup)"
+          (clickEv)="requestSignupOtp()"
+          [displayDetails]="requestOtpBtnDetails"
+        ></app-next-action-button>
+      </ng-container>
     </form>
 
-    <div class="actions">
-      <app-next-action-button [displayDetails]="verifyBtnDetails" (click)="onSubmit()"></app-next-action-button>
-    </div>
-
-    <div class="footer-text">
-      <div class="or-text">OR</div>
-      <a class="links">Login to Existing Account</a>
+    <div class="footer-text" *ngIf="!otpSent">
+      <span class="or-text">OR</span>
+      <span class="login-segway">
+        <a (click)="openLogin()" class="links">Login</a>
+        to Existing Account
+      </span>
     </div>
   </div>
 </div>
+<app-loader *ngIf="isLoaderShown"></app-loader>

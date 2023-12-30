@@ -27,6 +27,7 @@ import { SessionStorageService } from '@app/utils/services/session-storage.servi
 import { CoreApiService } from '@app/utils/services/core-api.service';
 import { cloudFunctionNames } from '@app/utils/constant/api-constants';
 import { HttpsCallableResult } from '@angular/fire/functions';
+import { LoginComponent } from './login/login.component';
 
 @Injectable({
   providedIn: 'root',

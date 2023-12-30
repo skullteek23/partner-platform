@@ -1,15 +1,15 @@
 <div class="main-container home-content-wrapper">
-  <div class="header-content-container">
+  <div class="header-content-container" *ngIf="isPageInitialized">
     <div class="salutation-strip">
-      <span class="page-sub-label"> Hi , {{ name }}</span>
-      <ng-container>
-        <!-- <button mat-icon-button>
+      <span class="page-sub-label" *ngIf="name">
+        Hi, {{ name }}</span>
+      <ng-container *ngIf="isUserLogged">
+        <button mat-icon-button (click)="navigateTo('/user/account')" >
           <mat-icon fontSet="material-icons-round">account_circle</mat-icon>
-        </button> -->
+        </button>
       </ng-container>
     </div>
-    <app-icon-selection-menu [data]="data" (selectionChange)="onSelectOption($event)">
-    </app-icon-selection-menu>
+    <app-icon-selection-menu [data]="data" (selectionChange)="onSelectOption($event)"></app-icon-selection-menu>
   </div>
 
   <div class="content-container">
@@ -20,8 +20,8 @@
       </button> -->
     </div>
     <div class="content">
-      <div class="onboarding-content">
-        <app-wide-button (clickEv)="getStarted()" [displayDetails]="buttonDetails"></app-wide-button>
+      <div class="onboarding-content" *ngIf="!contentList.length">
+        <app-wide-button *ngIf="!isUserLogged" (clickEv)="getStarted()" [displayDetails]="buttonDetails"></app-wide-button>
         <app-placeholder></app-placeholder>
       </div>
     </div>

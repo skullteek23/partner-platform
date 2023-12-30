@@ -1,0 +1,3 @@
+<div class="main-container" *ngIf="!isPageInitialized">
+  <app-wide-button [theme]="ButtonTheme.secondary" [displayDetails]="logoutBtn" (clickEv)="logout()"></app-wide-button>
+</div>
