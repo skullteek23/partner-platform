@@ -10,6 +10,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonsModule } from '../../shared-modules/buttons/buttons.module';
+import { FormFieldErrorsModule } from '@app/shared-modules/form-field-errors/form-field-errors.module';
+import { LoaderModule } from '@app/shared-modules/loader/loader.module';
+
 
 
 @NgModule({
@@ -24,7 +27,9 @@ import { ButtonsModule } from '../../shared-modules/buttons/buttons.module';
     MatButtonModule,
     MatIconModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    FormFieldErrorsModule,
+    LoaderModule,
   ],
   exports: [SignupComponent],
 })

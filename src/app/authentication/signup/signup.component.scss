@@ -4,7 +4,7 @@
 .sheet-content-container {
   @include mainPageContainer();
   .heading {
-    @include flexStartCol(6px, center);
+    @include flexStartCol(4px, center);
   }
 
   mat-divider {
@@ -18,23 +18,37 @@
     @include flexStartCol(16px);
 
     form {
-      @include flexStartCol(4px);
-    }
-    .actions {
+      @include flexStartCol(8px);
       text-align: center;
+
+      .actions {
+        @include flexCenter(row, 16px);
+      }
     }
-  }
 
-  .footer-text {
-    width: 100%;
-    text-align: center;
-    padding: 4px 0 40px;
+    .footer-text {
+      width: 100%;
+      text-align: center;
+      padding: 4px 0 40px;
 
-    .or-text {
-      font-size: $font-size-s;
-      color: $light-text;
-      display: block;
-      margin-bottom: 12px;
+      .or-text {
+        font-size: $font-size-s;
+        color: $light-text;
+        display: block;
+        margin-bottom: 12px;
+      }
+
+      .login-segway {
+        font-size: $font-size-m;
+        color: $grey-text;
+      }
     }
   }
 }
+
+.terms-segway {
+  font-size: $font-size-s;
+  font-weight: 300;
+  text-align: center;
+}
+

@@ -144,7 +144,7 @@ export class AuthBaseComponent implements CanComponentDeactivate {
           this.sessionStorageService.remove(
             SessionStorageProperties.REDIRECT_URL
           );
-          this.closeSheet('/games/discover');
+          this.closeSheet('/');
           this.hideLoader();
         })
         .catch(this.handleSignInError.bind(this));
